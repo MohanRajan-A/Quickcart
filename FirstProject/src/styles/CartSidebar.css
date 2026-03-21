@@ -1,0 +1,140 @@
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 400px;
+  height: 100vh;
+  background: white;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-sidebar.open {
+  right: 0;
+}
+
+/* 🔥 Header */
+.cart-header {
+  padding: 16px;
+  background: #f8f9fa;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid #eee;
+}
+
+/* ❌ Close button */
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+
+  padding: 5px;
+  line-height: 1;
+
+  transition: transform 0.2s ease;
+}
+
+.close-btn:hover {
+  transform: scale(1.2);
+}
+
+/* 📦 Cart items container */
+.cart-items {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px;
+}
+
+/* 🧾 Each item */
+.cart-item {
+  display: grid;
+  grid-template-columns: 60px 1fr auto auto;
+  gap: 10px;
+  align-items: center;
+
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* 🖼 Image */
+.cart-item-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* 🔢 Quantity controls */
+.cart-item-quantity {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.quantity-btn {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.quantity-btn:hover {
+  background: #ddd;
+}
+
+.quantity-display {
+  min-width: 20px;
+  text-align: center;
+}
+
+/* ❌ Remove button */
+.remove-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #999;
+}
+
+.remove-btn:hover {
+  color: #ff4d4d;
+}
+
+/* 💰 Footer */
+.cart-footer {
+  padding: 16px;
+  border-top: 1px solid #eee;
+  background: #fafafa;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* 📭 Empty cart */
+.empty-cart {
+  text-align: center;
+  color: #888;
+  margin-top: 40px;
+}
+
+/* 📱 Mobile */
+@media (max-width: 480px) {
+  .cart-sidebar {
+    width: 100%;
+    right: -100%;
+  }
+}
